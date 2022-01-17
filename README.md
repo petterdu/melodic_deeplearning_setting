@@ -1,5 +1,44 @@
 # melodic_deeplearning_setting
 
+##편의 소프트웨어(chrome,Anydesk,Visual Studio Code, terminator) 설치
+
+### Chrome 설치
+```
+$ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+$ sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+$ sudo apt-get update
+$ sudo apt-get install google-chrome-stable
+$ sudo rm -rf /etc/apt/sources.list.d/google.list
+$ sudo apt-get clean
+$ sudo apt-get update
+```
+
+### Anydesk 설치
+
+```
+$ sudo apt update
+$ sudo apt -y upgrade
+$ wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
+$ echo "deb http://deb.anydesk.com/ all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list
+$ sudo apt update
+$ sudo apt install anydesk
+```
+
+### Visual Studio Code 설치
+
+> ➔ Ubuntu Software Click ➔ 검색창에 'code' 입력 ➔ ‘Visual Studio Code’ ➔ 사용자 비밀번호 입력  ➔ 'install' Click
+> ➔  'Unable to install "Visual Studio Code": snap "code" has "install-snap" change in progress' 문구 발생 시 다음과 같이 터미널 창에서 실행
+```
+$ snap changes
+```
+> 이후 기다리거나 다시 다운로드 하면 정상 설치 됨
+
+
+### terminator 설치
+```
+$ sudo apt-get install terminator
+```
+
 ## 외장 그래픽 카드 설치
 
 ### 최신버전 CUDA Toolkit 설치
