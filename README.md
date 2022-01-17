@@ -33,4 +33,14 @@ $ sudo apt-get -y install cuda
 Nvidia & Cuda Toolkit 버전 확인
 > nvcc -V
 
+그래픽카드 경로 작성
+> vim ~/.bashrc
+
+```
+# NVIDIA CUDA toolkit
+export PATH=/usr/local/cuda-11/bin:$PATH	
+export LD_LIBRARY_PATH=/usr/local/cuda-11/lib64
+```
+
+> source ~/.bashrc
 
