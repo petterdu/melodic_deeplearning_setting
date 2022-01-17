@@ -37,10 +37,8 @@ Nvidia & Cuda Toolkit 버전 확인
 ```
 vim ~/.bashrc
 ```
->* NVIDIA CUDA toolkit
->
-> export PATH=/usr/local/cuda-11/bin:$PATH
-> 
+>* NVIDIA CUDA toolkit   
+> export PATH=/usr/local/cuda-11/bin:$PATH   
 > export LD_LIBRARY_PATH=/usr/local/cuda-11/lib64
 ```
 source ~/.bashrc
