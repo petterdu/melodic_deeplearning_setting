@@ -51,3 +51,11 @@ source ~/.bashrc
 > Login ➔ Download cuDNN Click ➔ 'I Agree To the Terms of the cuDNN Software License Agreement' Check   
 > ➔ Download 하단 'Archived cuDNN Releases' Click ➔ 'Download cuDNN v8.3.1 (November 22nd, 2021), for CUDA 11.5' Click
 > ➔ 'Local Installer for Linux x86_64 (Tar)' Download
+```
+$ cd Downloads/
+$ tar -xzvf cudnn-11.5-linux-x64-v8.3.0.98.tgz
+#cudnn  관련 파일 위치 cuda 디렉토리로 이동
+$ sudo cp cuda/include/cudnn*.h /usr/local/cuda/include
+$ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+$ sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
+```
