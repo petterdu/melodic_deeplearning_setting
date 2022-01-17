@@ -31,8 +31,10 @@ $ sudo apt-get update
 $ sudo apt-get -y install cuda
 ```
 Nvidia & Cuda Toolkit 버전 확인
-> nvcc -V
-
+```
+$ nvcc -V
+$ nvidia -smi
+```
 그래픽카드 경로 작성
 ```
 vim ~/.bashrc
@@ -43,3 +45,8 @@ vim ~/.bashrc
 ```
 source ~/.bashrc
 ```
+### CUDADNN 11.5 설치
+
+[Nvidia developer 공식 홈페이지](https://developer.nvidia.com/cudnn)
+> Login > Download cuDNN Click > 'I Agree To the Terms of the cuDNN Software License Agreement' Check > Download 하단 'Archived cuDNN Releases' Click >   
+> 'Download cuDNN v8.3.1 (November 22nd, 2021), for CUDA 11.5' Click > 'Local Installer for Linux x86_64 (Tar)' Download
