@@ -1,7 +1,6 @@
 ## melodic_deeplearning_setting
 
 최신버전 CUDA Toolkit 설치
-
 [Nvidia 주소](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=18.04&target_type=deb_local)
 
 
