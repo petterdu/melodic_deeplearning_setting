@@ -1,6 +1,6 @@
-## melodic_deeplearning_setting
+# melodic_deeplearning_setting
 
-#외장 그래픽 카드 설치
+## 외장 그래픽 카드 설치
 
 최신버전 CUDA Toolkit 설치
 
