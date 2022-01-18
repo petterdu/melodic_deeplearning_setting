@@ -98,7 +98,7 @@ $ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 $ sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
 ```
 
-### Anaconda install
+## Anaconda install
 [Anaconda 공식 홈페이지](https://www.anaconda.com/products/individual)   
 [Anaconda 이전 버전 주소](repo.anaconda.com/archive/)   
 > Anaconda 공식 홈페이지 ➔ download Click 
@@ -136,7 +136,7 @@ Databases, and more! Get a free trial at: https://www.anaconda.com/pycharm
 $ 
 ```
 
-Anaconda 경로 수정
+### Anaconda 경로 수정
 ```
 $ vim ~/.bashrc
 ```
@@ -175,6 +175,29 @@ $ conda install anaconda-clean
 $ anaconda-clean
 $ rm -rf ~/anaconda3
 $ rm -rf ~/.anaconda_backup
+```
+
+## ROS(Melodic) 설치
+
+```
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+sudo apt update
+sudo apt install ros-melodic-desktop-full
+apt search ros-melodic
+echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+sudo apt install python-rosdep
+sudo rosdep init
+rosdep update
+roscore
+sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+catkin init workspace
+cd ..
+catkin_make
 ```
 
 
