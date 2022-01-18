@@ -56,8 +56,7 @@ $ sudo apt-get -y install cuda
 ```
 
 ### CUDA Toolkit 11.5.1 설치 (GTX 3060 기준으로 진행 시)
-[CUDA Toolkit 이전 버전 주소](https://developer.nvidia.com/cuda-toolkit-archive)
-
+[CUDA Toolkit 이전 버전 주소](https://developer.nvidia.com/cuda-toolkit-archive)   
 [Nvidia 주소](https://developer.nvidia.com/cuda-11-5-1-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=18.04&target_type=deb_local)
 
 ```
@@ -76,13 +75,13 @@ $ nvidia -smi
 ```
 그래픽카드 경로 작성
 ```
-vim ~/.bashrc
+$ vim ~/.bashrc
 ```
 >* NVIDIA CUDA toolkit   
 > export PATH=/usr/local/cuda-11/bin:$PATH   
 > export LD_LIBRARY_PATH=/usr/local/cuda-11/lib64
 ```
-source ~/.bashrc
+$ source ~/.bashrc
 ```
 ### CUDADNN 11.5 설치
 
@@ -98,3 +97,75 @@ $ sudo cp cuda/include/cudnn*.h /usr/local/cuda/include
 $ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 $ sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
 ```
+
+### Anaconda install
+[Anaconda 공식 홈페이지](https://www.anaconda.com/products/individual)   
+[Anaconda 이전 버전 주소](repo.anaconda.com/archive/)   
+> Anaconda 공식 홈페이지 ➔ download Click 
+
+```
+$ cd Downloads/
+$ chmod -R 777 *
+$ bash ./Anaconda3-2021.11-Linux-x86_64.sh
+```
+> 'Please, press ENTER to continue' 문구가 나오면 Enter ➔ 'Do you accept the license terms? [yes|no]' 문구가 나오면 'yes'라고 터미널 창에 입력
+> ➔ 그다음 ENTER를 눌러 기본 경로로 설치 진행 (설치 경로 입력 가능) ➔ 이후  'by running conda init? [yes|no]' 문구가 나오면 'yes'를 눌러 anaconda 초기화 진행
+
+```
+no change /root/anaconda3/condabin/conda
+no change /root/anaconda3/bin/conda
+no change /root/anaconda3/bin/conda-env
+no change /root/anaconda3/bin/activate
+no change /root/anaconda3/bin/deactivate
+no change /root/anaconda3/etc/profile.d/conda.sh
+no change /root/anaconda3/etc/fish/conf.d/conda.fish
+no change /root/anaconda3/shell/condabin/Conda.psm1
+no change /root/anaconda3/shell/condabin/conda-hook.ps1
+no change /root/anaconda3/lib/python3.8/site-packages/xontrib/conda.xsh
+no change /root/anaconda3/etc/profile.d/conda.csh
+no change /root/.bashrc 
+No action taken. 
+If you'd prefer that conda's base environment not be activated on startup, set the auto_activate_base parameter to false: 
+conda config --set auto_activate_base false 
+Thank you for installing Anaconda3! 
+=========================================================================== 
+Working with Python and Jupyter notebooks is a breeze with PyCharm 
+Professional! Code completion, Notebook debugger, VCS support, SSH, Docker, 
+Databases, and more! Get a free trial at: https://www.anaconda.com/pycharm
+
+$ 
+```
+
+Anaconda 경로 수정
+```
+$ vim ~/.bashrc
+```
+> 설치 후 bashrc에는 다음과 같이 작성이 되어있을텐데, 이후 python default가 anaconda로 잡히는 현상이 일어나 다음과 같이만 적고   
+> export PATH=/root/anaconda3/bin:$PATH 문구는 따로 작성 안함
+```
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/kmw/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/kmw/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/kmw/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/kmw/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+```
+
+```
+$ source ~/.bashrc
+```
+Anaconda auto starting False Setting
+> 새 터미널 창을 열때마다 Anaconda 연결 되는 현상 해제 (앞에 base 콘다 환경으로 들어가는 현상) 
+```
+$ conda config --set auto_activate_base False
+$ source ~/.bashrc
+```
+
