@@ -106,7 +106,7 @@ $ sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn
 ```
 $ cd Downloads/
 $ chmod -R 777 *
-$ bash ./Anaconda3-2021.11-Linux-x86_64.sh
+$ bash Anaconda3-2021.11-Linux-x86_64.sh
 ```
 > 'Please, press ENTER to continue' 문구가 나오면 Enter ➔ 'Do you accept the license terms? [yes|no]' 문구가 나오면 'yes'라고 터미널 창에 입력
 > ➔ 그다음 ENTER를 눌러 기본 경로로 설치 진행 (설치 경로 입력 가능) ➔ 이후  'by running conda init? [yes|no]' 문구가 나오면 'yes'를 눌러 anaconda 초기화 진행
@@ -168,4 +168,15 @@ Anaconda auto starting False Setting
 $ conda config --set auto_activate_base False
 $ source ~/.bashrc
 ```
+### Anaconda Uninstall (필요 시)
+
+```
+$ conda install anaconda-clean
+$ anaconda-clean
+$ rm -rf ~/anaconda3
+$ rm -rf ~/.anaconda_backup
+```
+
+
+
 
