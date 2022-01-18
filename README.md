@@ -162,7 +162,7 @@ unset __conda_setup
 ```
 $ source ~/.bashrc
 ```
-Anaconda auto starting False Setting
+### Anaconda auto starting False Setting
 > 새 터미널 창을 열때마다 Anaconda 연결 되는 현상 해제 (앞에 base 콘다 환경으로 들어가는 현상) 
 ```
 $ conda config --set auto_activate_base False
