@@ -180,26 +180,56 @@ $ rm -rf ~/.anaconda_backup
 ## ROS(Melodic) 설치
 
 ```
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-sudo apt update
-sudo apt install ros-melodic-desktop-full
-apt search ros-melodic
-echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
-source ~/.bashrc
-sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
-sudo apt install python-rosdep
-sudo rosdep init
-rosdep update
-roscore
-sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src
-catkin init workspace
-cd ..
-catkin_make
+$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+$ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+$ sudo apt update
+$ sudo apt install ros-melodic-desktop-full
+$ apt search ros-melodic
+$ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+$ source ~/.bashrc
+$ sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+$ sudo apt install python-rosdep
+$ sudo rosdep init
+$ rosdep update
+$ roscore
+$ sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool
+$ mkdir -p ~/catkin_ws/src
+$ cd ~/catkin_ws/src
+$ catkin init workspace
+$ cd ..
+$ catkin_make
 ```
 
+## Husky_ur3 설치
 
+>> https://github.com/QualiaT/husky_ur3_simulator 참조
+
+```
+# yaml install
+
+$ pip install pyyaml
+
+# rospkg install
+
+$ pip install -U rospkg
+
+# cv2 install
+
+$ sudo apt install build-essential cmake git pkg-config libgtk-3-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libjpeg-dev libpng-dev libtiff-dev gfortran openexr libatlas-base-dev python3-dev python3-numpy libtbyab2 libtbb-dev libdc1394-22-dev
+$ mkdir ~/opencv && cd ~/opencv
+$ git clone https://github.com/opencv/opencv.git
+$ git clone https://github.com/opencv/opencv_contrib.git
+$ cd ~/opencv/opencv
+$ mkdir build && cd build
+$ cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D INSTALL_C_EXAMPLES=ON \
+    -D INSTALL_PYTHON_EXAMPLES=ON \
+    -D OPENCV_GENERATE_PKGCONFIG=ON \
+    -D OPENCV_EXTRA_MODULES_PATH=~/opencv/opencv_contrib/modules \
+    -D BUILD_EXAMPLES=ON .. 
+$ sudo make -j8
+$ sudo make install
+```
 
 
