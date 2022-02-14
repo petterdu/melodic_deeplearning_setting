@@ -204,6 +204,9 @@ $ catkin_make
 
 >> https://github.com/QualiaT/husky_ur3_simulator 참조
 
+
+## 필요 패키지 설치
+
 ```
 # yaml install
 
@@ -231,5 +234,7 @@ $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 $ sudo make -j8
 $ sudo make install
 ```
+
+
 
 
