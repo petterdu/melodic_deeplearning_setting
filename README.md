@@ -202,10 +202,10 @@ $ catkin_make
 
 ## Husky_ur3 설치
 
->> https://github.com/QualiaT/husky_ur3_simulator 참조
+> https://github.com/QualiaT/husky_ur3_simulator 참조
 
 
-## 필요 패키지 설치
+## cnn 필요 패키지 설치
 
 ```
 # yaml install
@@ -233,8 +233,64 @@ $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D BUILD_EXAMPLES=ON .. 
 $ sudo make -j8
 $ sudo make install
+
+# cv_Bridge install
+
+$ sudo apt-get install python3-pip python3-yaml
+$ sudo pip3 install rospkg catkin_pkg
+$ cd
+$ mv ~/catkin_ws/src/ ~/backup/
+$ mkdir -p ~/catkin_ws/src
+$ cd ~/catkin_ws/src
+$ git clone -b melodic https://github.com/ros-perception/vision_opencv.git
+$ cd ..
+$ catkin_init
+$ catkin clean -y
+$ catkin_make --only-pkg-with-deps vision_opencv -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so
+$ catkin_make install
+$ source install/setup.bas --extend
+$ cd src/
+$ sudo rm -rf vision_opencv
+$ cp -arpf ~/backup/src ~/catkin_ws
+$ rm -rf ~/backup/src/
+$ cd ~/catkin_ws/
+$ catkin_make
+$ sb
 ```
 
+#ocr-rcnn install
+
+> https://github.com/supertigim/elevator_buttons_recognition.git 참조
+
+```
+내꺼 깃허브 파일 다운
+$ cd ~/catkin_ws/
+$ catkin_make 
+$ ~/catkin_ws/src/deep_pakage/scripts
+
+>> ocr-rcnn README 참조 (conda 생성)
+
+$ conda create -n detection python=3.7 pyqt=5
+$ conda activate detection
+$ pip install -r requirements.txt 
+$ cd addons
+$ cd labelImg 
+$ pip install -r requirements/requirements-linux-python3.txt
+
+# 여기부터는 꼭 해야하는지 확인 필요
+
+$ cd ../..
+$ sudo apt-get install protobuf-compiler
+$ cd models/research
+$ wget -O protobuf.zip https://github.com/google/protobuf/releases/download/v3.0.0/protoc-3.0.0-linux-x86_64.zip
+$ unzip protobuf.zip
+$ protoc object_detection/protos/*.proto --python_out=.
+$ export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+
+```
+
+
+# yolo darknet 설치 후 내꺼 input 
 
 
 
