@@ -265,7 +265,7 @@ $ sb
 > https://github.com/supertigim/elevator_buttons_recognition.git 참조
 
 ```
-내꺼 깃허브 파일 다운
+$ git clone https://hub.com/supertigim/elevator_buttons_recognition.git
 $ cd ~/catkin_ws/
 $ catkin_make 
 $ ~/catkin_ws/src/deep_pakage/scripts
@@ -309,5 +309,6 @@ $ rospack profile
 # object tracker, push_button, audio_saying 등 실행 스크립트 설치
 
 > object tracker 의 상세 설명이 필요한 경우 https://github.com/QualiaT/object_tracker 참조
-> 실행 스크립트는 상단 ocr_rcnn에서 이곳 git에서 같이 다운
+
+$ git clone 
 
