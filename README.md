@@ -249,6 +249,8 @@ $ catkin clean -y
 $ catkin_make --only-pkg-with-deps vision_opencv -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so
 $ catkin_make install
 $ source install/setup.bas --extend
+$ rm -rf ~/catkin_ws/build
+$ rm -rf ~/catkin_ws/devel
 $ cd src/
 $ sudo rm -rf vision_opencv
 $ cp -arpf ~/backup/src ~/catkin_ws
