@@ -310,5 +310,5 @@ $ rospack profile
 
 > object tracker 의 상세 설명이 필요한 경우 https://github.com/QualiaT/object_tracker 참조
 
-$ git clone 
+$ git clone https://github.com/petterdu/melodic_deeplearning_setting.git
 
