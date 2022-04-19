@@ -306,6 +306,6 @@ $ rospack profile
 
 # object tracker, push_button, audio_saying 등 실행 스크립트 설치
 
-
-
+> object tracker 의 상세 설명이 필요한 경우 https://github.com/QualiaT/object_tracker 참조
+> 실행 스크립트는 상단 ocr_rcnn에서 이곳 git에서 같이 다운
 
