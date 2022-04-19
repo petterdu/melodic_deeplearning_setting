@@ -1,0 +1,13 @@
+1."object_tracking_with_py2.launch" -> 15 line 주석처리
+2."object_tracking_with_py2.py" -> 95line 카메라 링크 수정 (시뮬 시 g_camera_link, 실제 리얼센스 사용시 camera_link)
+3."object_tracking_with_py2.py" -> 106line 수정 ( 엘레베이터 버튼 사용 시 deep_pakage/boudingboxes, yolo 시용 시 darknet_ros/bounding _boxes)
+
+
+4. deep_pakage/input_cam_recognition.py -> 104~107 수정 (시뮬레이션 시 106라인 사용, 실제 카메라 사용시 150라인 사용) 
+
+
+
+
+
+5. object_tracking_with_py2.py -> topic 1,3 를 시뮬에서 돌릴 시, 그냥 뎁스로 변경
+6. object_tracking_with_py2.py -> 시뮬에서 돌릴 시, 85,87라인, distance_in_m*1000 으로 변경

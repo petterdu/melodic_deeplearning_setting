@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+    <arg name="align_depth"    value="true"/>
+  </include> -->
+
+  <!-- <include file="$(find darknet_ros)/launch/darknet_ros.launch">
+    <arg name="image"    value="/g_d435/rgb/g_image_raw"/>
+  </include> -->
+
+
+  <node name="object_tracker" pkg="elevator_simulation" type="object_tracker_py2.py"/>
+  <node name="push_button" pkg="elevator_simulation" type="push_button.py"/>
+  <!-- <node name="send_client_goal2" pkg="elevator_simulation" type="mobile_rotation.py"/> -->
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find object_tracker)/config/object_tracking_config.rviz"/> -->
+
+</launch>
