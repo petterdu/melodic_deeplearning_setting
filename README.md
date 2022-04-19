@@ -1,6 +1,6 @@
 # melodic_deeplearning_setting
 
-##편의 소프트웨어(chrome,Anydesk,Visual Studio Code, terminator) 설치
+## 편의 소프트웨어(chrome,Anydesk,Visual Studio Code, terminator) 설치
 
 ### Chrome 설치
 ```
@@ -258,7 +258,7 @@ $ catkin_make
 $ sb
 ```
 
-#ocr-rcnn install
+# ocr-rcnn install
 
 > https://github.com/supertigim/elevator_buttons_recognition.git 참조
 
@@ -290,7 +290,22 @@ $ export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 ```
 
 
-# yolo darknet 설치 후 내꺼 input 
+# yolo darknet_ros 설치
+
+> https://github.com/leggedrobotics/darknet_ros 참조
+> 본인 GPU에 맞게 darknet ros cmakelists 에 수정 필요
+> 3060의 경우 https://en.wikipedia.org/wiki/CUDA#Supported_GPUs 확인해보면 Compute capability 가 8.6임을 확인할 수 있다.
+> 이에 맞게 darknet ros cmakelists 23 line cuda nvcc flags 부분에
+> -gencode arch=compute_86,code=sm_86 입력
+
+$ cd catkin_workspace/src
+$ git clone --recursive git@github.com:leggedrobotics/darknet_ros.git
+$ cd ../
+$ catkin_make -DCMAKE_BUILD_TYPE=Release
+$ rospack profile
+
+# object tracker, push_button, audio_saying 등 실행 스크립트 설치
+
 
 
 
