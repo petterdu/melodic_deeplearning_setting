@@ -208,7 +208,7 @@ $ cd ~/catkin_ws/src
 $ catkin_init_workspace
 $ cd ..
 $ catkin_make
-$ pip install -U catkin_tools
+$ sudo apt-get install python-catkin-tools
 ```
 
 ## bashrc command input
