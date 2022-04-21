@@ -260,7 +260,7 @@ $ sudo make install
 $ sudo apt-get install python3-pip python3-yaml
 $ sudo pip3 install rospkg catkin_pkg
 $ cd
-$ mv ~/catkin_ws/src/ ~/backup/
+$ mv ~/catkin_ws/src/ ~/backup/src
 $ mkdir -p ~/catkin_ws/src
 $ cd ~/catkin_ws/src
 $ git clone -b melodic https://github.com/ros-perception/vision_opencv.git
