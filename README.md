@@ -71,7 +71,7 @@ $ sudo apt-get -y install cuda
 Nvidia & Cuda Toolkit 버전 확인
 ```
 $ nvcc -V
-$ nvidia -smi
+$ nvidia-smi
 ```
 그래픽카드 경로 작성
 ```
