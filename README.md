@@ -204,10 +204,20 @@ $ roscore
 $ sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool
 $ mkdir -p ~/catkin_ws/src
 $ cd ~/catkin_ws/src
-$ catkin init workspace
+$ catkin_init_workspace
 $ cd ..
 $ catkin_make
 ```
+
+## bashrc command input
+
+```
+alias eb='code . ~/.bashrc'
+alias sb='source ~/.bashrc'
+alias cs='cd ~/catkin_ws/src'
+alias cm='cd ~/catkin_ws && catkin_make'
+```
+
 
 ## Husky_ur3 설치
 
