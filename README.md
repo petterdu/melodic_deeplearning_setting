@@ -91,7 +91,7 @@ $ source ~/.bashrc
 > ➔ 'Local Installer for Linux x86_64 (Tar)' Download
 ```
 $ cd Downloads/
-$ tar -xzvf cudnn-11.5-linux-x64-v8.3.0.98.tgz
+$ tar -xvf cudnn-linux-x86_64-8.3.1.22_cuda11.5-archive.tar.xz
 #cudnn  관련 파일 위치 cuda 디렉토리로 이동
 $ sudo cp cuda/include/cudnn*.h /usr/local/cuda/include
 $ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
