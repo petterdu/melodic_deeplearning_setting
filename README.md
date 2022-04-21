@@ -91,11 +91,20 @@ $ source ~/.bashrc
 > ➔ 'Local Installer for Linux x86_64 (Tar)' Download
 ```
 $ cd Downloads/
-$ tar -xvf cudnn-linux-x86_64-8.3.1.22_cuda11.5-archive.tar.xz
+$  tar -xvf cudnn-linux-x86_64-8.3.2.44_cuda11.5-archive.tar.xz
 #cudnn  관련 파일 위치 cuda 디렉토리로 이동
-$ sudo cp cuda/include/cudnn*.h /usr/local/cuda/include
-$ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+$ sudo cp cudnn-*-archive/include/cudnn*.h /usr/local/cuda/include
+$ sudo cp -P cudnn-*-archive/lib/libcudnn* /usr/local/cuda/lib64
 $ sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
+
+$ sudo ldconfig
+
+# cudnn check version
+
+>8.0 dlgk
+$ cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
+>8.0 dltkd
+$ cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 ```
 
 ## Anaconda install
