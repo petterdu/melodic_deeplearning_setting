@@ -289,12 +289,12 @@ $ sb
 $ git clone https://hub.com/supertigim/elevator_buttons_recognition.git
 $ cd ~/catkin_ws/
 $ catkin_make 
-$ ~/catkin_ws/src/deep_pakage/scripts
 
 >> ocr-rcnn README 참조 (conda 생성)
 
 $ conda create -n detection python=3.7 pyqt=5
 $ conda activate detection
+$ cd elevator_buttons_recognition
 $ pip install -r requirements.txt 
 $ cd addons
 $ cd labelImg 
