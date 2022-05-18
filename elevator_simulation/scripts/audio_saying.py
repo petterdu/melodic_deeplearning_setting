@@ -4,6 +4,8 @@
 import rospy
 
 import os
+import subprocess as subp
+
 from std_msgs.msg import String, Int16
 import numpy as np
 import speech_recognition as sr
@@ -41,32 +43,41 @@ def speak(text):
 
 def get_audio():
     r = sr.Recognizer()
-    class_topic=2
+    
+    global state_count, query
     
 
-    with sr.Microphone(device_index = 13, sample_rate = 44100, chunk_size = 1024 ) as source:
+    with sr.Microphone(device_index = 6, sample_rate = 44100, chunk_size = 1024 ) as source:
         print("Say something!")
         audio = r.listen(source)
         # audio = r.listen(source, phrase_time_limit=2)
         query = r.recognize_google(audio,language="ko")
+        print(query)
 
+        if query[:1].isdigit() == True or (query[:1]) =='올' or (query[:1]) =='내' or (query[:1]) =='지':
+            say_def()
+            state_count = state_count +1
+        else:
+            print("again say")
+
+def say_def():  
+    global query, state_count
+    class_topic=2          
     try:
         print("Google Speech Recognition thinks you said : " + query)
         
         (class_topic)=str(query[:1])
 
-        if class_topic =='위':
-            class_topic ='up'
-        elif class_topic =='아':
-            class_topic='down'
-        elif class_topic =='지':
+        if class_topic =='지':
             class_topic='B'+str(query[3])
             speak(query[:5]+str("으로 가겠습니다."))
         else:
             speak(query[:2]+str("으로 가겠습니다."))
         button_push = 'rostopic pub /Class_Name std_msgs/String \\"'+str(class_topic)+'\\"'
         print(button_push)
-        os.system(button_push)
+        subp.check_call(str(button_push), shell=True)
+        print("state_count is: ")
+        print(state_count)
         
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
@@ -87,4 +98,3 @@ if __name__ == '__main__':
         if state_count ==1:
             
             get_audio()
-            state_count = state_count +1

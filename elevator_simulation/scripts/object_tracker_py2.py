@@ -1,6 +1,6 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-from dis import dis
 import rospy
 import tf
 import sys
@@ -82,10 +82,9 @@ class ImageListener:
                 cx = (box.xmax + box.xmin)/2
                 cy = (box.ymax + box.ymin)/2
                 distance_in_mm = cv_image[cy, cx]
-                print(distance_in_mm)
                 distance_in_cm = (distance_in_mm / 10.0)
                 distance_in_m = (distance_in_mm / 1000.0)
-                
+                print(distance_in_mm)
                 category.append(object_name)
                 for name_check_index in range(len(category)):
                     if category[name_check_index] in object_name:
@@ -98,7 +97,6 @@ class ImageListener:
                 trans = Transform(translation=Vector3(point[2], -point[0], -point[1]),
                             rotation=Quaternion(*tf.transformations.quaternion_from_euler(0, 0, 0))
                             )
-
 
                 if  box.Class ==Class_Name:                           
                     msg.position.x=(point[2])
@@ -121,6 +119,10 @@ class ImageListener:
     def SelectClass(self, String):
         global Class_Name, count
         Class_Name =String.data
+        if Class_Name =='올':
+            Class_Name = '('
+        elif Class_Name =='아':
+            Class_Name = ')'
         count = 1
         print(Class_Name)
         

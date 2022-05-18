@@ -99,9 +99,10 @@ def main():
     r = rospy.Rate(4)
     state=0
     
-    #rospy.Subscriber("/usb_cam/image_raw", SensorImage, callback)
-    sub = rospy.Subscriber("/g_camera/color/image_raw", SensorImage, callback)
+    # rospy.Subscriber("/usb_cam/image_raw", SensorImage, callback)
     # sub = rospy.Subscriber("/g_d435/rgb/g_image_raw", SensorImage, callback)
+    sub = rospy.Subscriber("/g_camera/color/image_raw", SensorImage, callback)
+    
     #rospy.Subscriber("/camera1/color/image_raw", SensorImage, callback)
 
     #simply keeps python from exiting until this node is stopped
